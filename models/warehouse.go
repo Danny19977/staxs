@@ -24,4 +24,5 @@ type Warehouse struct {
 
 	Distributors []Distributor `json:"distributors" gorm:"foreignKey:WarehouseUUID;references:UUID"`
 	Stocks       []Stock       `json:"stocks" gorm:"foreignKey:WarehouseUUID;references:UUID"`
+	Products     []Product     `json:"products" gorm:"foreignKey:WarehouseUUID;references:UUID"`
 }

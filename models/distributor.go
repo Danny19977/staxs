@@ -14,9 +14,13 @@ type Distributor struct {
 
 	StockUUID string `json:"stock_uuid"`
 	Stock     Stock  `json:"stock" gorm:"foreignKey:StockUUID;references:UUID"`
-
 	ProductUUID string  `json:"product_uuid"`
 	Product     Product `json:"product" gorm:"foreignKey:ProductUUID;references:UUID"`
+	ReturnUUID string `json:"return_uuid"`
+	Return     Return `json:"return" gorm:"foreignKey:ReturnUUID;references:UUID"`
 
 	Signature string `json:"signature_uuid"`
+
+	Discount []Discount `json:"discounts" gorm:"foreignKey:DistributorUUID;references:UUID"`
+	
 }

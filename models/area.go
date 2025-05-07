@@ -15,7 +15,7 @@ type Area struct {
 
 	Signature string `json:"signature_uid"`
 
+	Warehouses []Warehouse `json:"warehouses" gorm:"foreignKey:AreaUUID;references:UUID"`
 	Stocks    []Stock `json:"stocks" gorm:"foreignKey:AreaUUID;references:UUID"`
 	Products  []Product `json:"products" gorm:"foreignKey:AreaUUID;references:UUID"`
-	Distributors []Distributor `json:"distributors" gorm:"foreignKey:AreaUUID;references:UUID"`
 }

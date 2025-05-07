@@ -22,5 +22,8 @@ type Stock struct {
 
 	Signature string `json:"signature_uuid"`
 
-	Returns []Returns `json:"returns" gorm:"foreignKey:StockUUID;references:UUID"`
+	Returns []Return `json:"returns" gorm:"foreignKey:StockUUID;references:UUID"`
+	Discounts []Discount `json:"discounts" gorm:"foreignKey:StockUUID;references:UUID"`
+	Category []Category `json:"category" gorm:"foreignKey:StockUUID;references:UUID"`
+	Distributor []Distributor `json:"distributor" gorm:"foreignKey:StockUUID;references:UUID"`
 }

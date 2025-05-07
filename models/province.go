@@ -14,4 +14,8 @@ type Province struct {
 	Signature string `json:"signature_uid"`
 
 	Areas []Area `json:"areas" gorm:"foreignKey:ProvinceUUID;references:UUID"`
+	Warehouse []Warehouse `json:"warehouse" gorm:"foreignKey:ProvinceUUID;references:UUID"`
+	Stocks []Stock `json:"stocks" gorm:"foreignKey:ProvinceUUID;references:UUID"`
+	Products []Product `json:"products" gorm:"foreignKey:ProvinceUUID;references:UUID"`
+	Users []User `json:"users" gorm:"foreignKey:ProvinceUUID;references:UUID"`
 }

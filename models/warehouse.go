@@ -17,8 +17,8 @@ type Warehouse struct {
 	AreaUUID string `json:"area_uuid"`
 	Area Area `json:"area" gorm:"foreignKey:AreaUUID;references:UUID"`
 
-	Head Head `json:"head" gorm:"foreignKey:HeadUUID;references:UUID"`
-	HeadUUID string `json:"head_uuid"`
+	// Head Head `json:"head" gorm:"foreignKey:HeadUUID;references:UUID"`
+	HeadsUUID string `json:"head_uuid"`
 
 
 	Signature string `json:"signature_uid"`

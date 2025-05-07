@@ -4,16 +4,19 @@ import "gorm.io/gorm"
 
 type Distributor struct {
 	gorm.Model
-		UUID string `json:"uuid" gorm:"primaryKey"`
+	UUID string `json:"uuid" gorm:"primaryKey"`
 
-		Name string `json:"name" gorm:"unique;not null"`
-		Quntity int `json:"quantity"`
+	WarehouseUUID string    `json:"warehouse_uuid"`
+	Warehouse     Warehouse `json:"warehouse" gorm:"foreignKey:WarehouseUUID;references:UUID"`
 
-		StockUUID string `json:"stock_uuid"`
-		Stock Stock `json:"stock" gorm:"foreignKey:StockUUID;references:UUID"`
+	Name    string `json:"name" gorm:"unique;not null"`
+	Quntity int    `json:"quantity"`
 
-		ProductUUID string `json:"product_uuid"`
-		Product Product `json:"product" gorm:"foreignKey:ProductUUID;references:UUID"`
+	StockUUID string `json:"stock_uuid"`
+	Stock     Stock  `json:"stock" gorm:"foreignKey:StockUUID;references:UUID"`
 
-		Signature string `json:"signature_uuid"`
+	ProductUUID string  `json:"product_uuid"`
+	Product     Product `json:"product" gorm:"foreignKey:ProductUUID;references:UUID"`
+
+	Signature string `json:"signature_uuid"`
 }

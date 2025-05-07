@@ -18,4 +18,6 @@ type Country struct {
 	User      []User     `json:"user" gorm:"foreignKey:CountryUUID;references:UUID"`
 	Provinces []Province `json:"provinces" gorm:"foreignKey:CountryUUID;references:UUID"`
 	Areas     []Area     `json:"areas" gorm:"foreignKey:CountryUUID;references:UUID"`
+	Stocks    []Stock    `json:"stocks" gorm:"foreignKey:CountryUUID;references:UUID"`
+	Products  []Product  `json:"products" gorm:"foreignKey:CountryUUID;references:UUID"`
 }
